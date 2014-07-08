@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+   <script src="isotope.pkgd.min.js"></script>
+   <script>
+$(window).load(function(){
+    var $container = $('#filterable-list');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+	$('#filterable-nav a').click(function(){
+        $('#filterable-nav .active').removeClass('active');
+        $(this).addClass('active');
+
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    }); 
+
+    $('#filterable-list').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            tLoading: 'Loading image #%curr%...',
+            mainClass: 'mfp-img-mobile',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: 1
+            },
+            image: {
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+            }
+        });
+});
+</script>
+ </HEAD>
+
+ <BODY>
+			
+			<section> 
+		<div id="container">
+		
+		<div class="text-center section-header dark" id="galley">
+                    <h2>GALLERY</h2>
+		</div>
+		<div class="row">
+            <div class="col-md-12 col-lg-12">
+
+                <div class="text-centered">
+                    <ul id="filterable-nav" class="nav filter-nav">
+                        <li><a href="#" class="active" data-filter="*">All</a>
+                        </li>
+                        <li><a href="#" data-filter=".design">Design</a>
+                        </li>
+                        <li><a href="#" data-filter=".landscape">Landscape</a>
+                        </li>
+                        <li><a href="#" data-filter=".city">City</a>
+                        </li>
+                        <li><a href="#" data-filter=".people">People</a>
+                        </li>
+                        <li><a href="#" data-filter=".abstract">Abstract</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+		<div class="row" id="filterable-list">
+			<div class="col-xs-6 col-md-3 abstract">
+				<a href="#" class="thumbnail portfolio-hover">
+				<img src="http://wolbest.com/wp-content/uploads/2014/02/Abstract-HD-Wallpaper.jpg" alt="...">
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 design people">
+				<a href="#" class="thumbnail">
+				<img src="http://2.bp.blogspot.com/-XMuH18jxCEU/T6ePpwJLhZI/AAAAAAAAFmU/sQYDxdsK_74/s1600/3D-Abstract-Wallpapers+-+graphics.jpg" alt="...">
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 city">
+				<a href="#" class="thumbnail">
+				<img src="http://magnigenie.com/wp-content/uploads/2014/02/1366x768-abstract-inspire-colorful-hd-wallpaper.jpg" alt="...">
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 city landscape">
+				<a href="#" class="thumbnail">
+				<img src="http://www.hdwallpapers.in/walls/abstract_hd-normal.jpg" alt="...">
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 landscape abstract design">
+				<a href="#" class="thumbnail">
+				<img src="http://www.pageresource.com/wallpapers/wallpaper/circles-abstract_271105.jpg" alt="...">
+				</a>
+			</div>
+			<div class="col-xs-6 col-md-3 people">
+				<a href="#" class="thumbnail">
+				<img src="http://media1.santabanta.com/full1/Creative/Abstract/abstract-298a.jpg" alt="...">
+				</a>
+			</div>
+		</div>
+		</div>
+	</section>
+ </BODY>
+</HTML>
